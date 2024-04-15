@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/features/counter/bloc/counter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_assignment/features/counter/bloc/counter_bloc.dart'; // Import the counter_bloc.dart file
 
 class CounterPage extends StatelessWidget {
   @override
@@ -40,6 +40,7 @@ class CounterView extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.add),
                       onPressed: () {
+                        // Dispatch IncrementEvent when add button is pressed
                         counterBloc.add(IncrementEvent());
                       },
                     ),

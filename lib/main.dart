@@ -28,14 +28,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Counter App',
+      title: 'Flutter Assignment',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 255, 253, 249),
-          title: const Text('Converter App'),
+          title: const Text('Flutter Assignment'),
         ),
         body: _pages[_selectedIndex], // Display the selected page
         bottomNavigationBar: BottomNavigationBar(
