@@ -20,7 +20,7 @@ class CounterView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Counter App'),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.green,
       ),
       body: Center(
         child: BlocBuilder<CounterBloc, CounterState>(
@@ -38,21 +38,22 @@ class CounterView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
+                      icon: Icon(Icons.remove),
+                      onPressed: () {
+                        counterBloc.add(DecrementEvent());
+                      },
+                    ),
+                    IconButton(
                       icon: Icon(Icons.add),
                       onPressed: () {
                         // Dispatch IncrementEvent when add button is pressed
                         counterBloc.add(IncrementEvent());
                       },
                     ),
-                    IconButton(
-                      icon: Icon(Icons.remove),
-                      onPressed: () {
-                        counterBloc.add(DecrementEvent());
-                      },
-                    ),
                   ],
                 ),
                 Switch(
+                  activeColor: Colors.green,
                   value: state.isBinary,
                   onChanged: (value) {
                     counterBloc.add(ToggleBinaryEvent());

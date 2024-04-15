@@ -22,7 +22,7 @@ class ConverterView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Binary Converter'),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.green,
       ),
       body: Center(
         child: BlocBuilder<ConverterBloc, ConverterState>(
@@ -33,9 +33,10 @@ class ConverterView extends StatelessWidget {
                 TextField(
                   controller: _binaryController,
                   decoration: InputDecoration(
-                    labelText: 'Enter Binary String',
+                    labelText: 'Enter the binary number',
                   ),
                 ),
+                SizedBox(height: 15),
                 ElevatedButton(
                   onPressed: () {
                     converterBloc
@@ -43,8 +44,9 @@ class ConverterView extends StatelessWidget {
                   },
                   child: Text('Convert'),
                 ),
+                SizedBox(height: 15),
                 Text(
-                  'Converted Number: ${state.convertedNumber}',
+                  'Converted Number is: ${state.convertedNumber}',
                   style: TextStyle(fontSize: 18),
                 ),
               ],

@@ -33,10 +33,6 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 255, 253, 249),
-          title: const Text('Flutter Assignment'),
-        ),
         body: _pages[_selectedIndex], // Display the selected page
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Color.fromARGB(255, 8, 154, 37),
@@ -46,11 +42,11 @@ class _MyAppState extends State<MyApp> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.format_list_numbered),
-              label: 'Counter',
+              label: 'Counter App',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.format_align_left),
-              label: 'Converter',
+              label: 'Converter App',
             ),
           ],
         ),
