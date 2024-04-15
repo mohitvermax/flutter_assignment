@@ -1,19 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'converter_event.dart';
 part 'converter_state.dart';
 
 class ConverterBloc extends Bloc<ConverterEvent, ConverterState> {
-  ConverterBloc() : super(ConverterState(0));
+  ConverterBloc() : super(ConverterState(0)) {
+    on<ConvertBinaryEvent>(convertBinaryEvent);
+  }
 
-  Stream<ConverterState> mapEventToState(ConverterEvent event) async* {
-    if (event is ConvertBinaryEvent) {
-      int? value = int.tryParse(event.binaryInput, radix: 2);
-      if (value != null) {
-        yield ConverterState(value);
-      } else {
-        // Handle invalid input
-      }
+  FutureOr<void> convertBinaryEvent(
+      ConvertBinaryEvent event, Emitter<ConverterState> emit) {
+    int? value = int.tryParse(event.binaryInput, radix: 2);
+    if (value != null) {
+      emit(ConverterState(value));
     }
   }
 }
